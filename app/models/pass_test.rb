@@ -1,0 +1,2 @@
+class PassTest < ApplicationRecord
+end
