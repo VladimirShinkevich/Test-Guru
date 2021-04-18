@@ -7,6 +7,6 @@ class Test < ApplicationRecord
   has_many :users, through: :pass_tests
 
   def self.tests_by_categories(category_title)
-    joins(:categories).where(categories: { title: category_title }).order(id: :desc).pluck(:title)
+    joins(:category).where(categories: { title: category_title }).order(id: :desc).pluck(:title)
   end	
 end
