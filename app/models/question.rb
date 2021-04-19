@@ -3,7 +3,6 @@ class Question < ApplicationRecord
 
   has_many :answers, dependent: :destroy
 
-  validates_associated :answers
   validates :body, presence: true
 
 end
