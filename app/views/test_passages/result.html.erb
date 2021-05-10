@@ -1,0 +1,13 @@
+<h1> Тест завершен!!! </h1>
+<p> 
+  <% if @test_passage.success? %> 
+  <h3> <b> Поздравляем вы прошли тест по <%= @test_passage.test.title %> </b> </h3>
+  <h3 class="success"> <b> Ваш результат: <%= @test_passage.pass_rate %> % </b> </h3>
+  <% else %>
+  <h3> Попробуйте еще раз!!! </h3>
+  <h3 class="unsuccess"> <b> Ваш результат: <%= @test_passage.pass_rate %> % </b> </h3>
+  <% end %>
+
+</p>
+
+<%= link_to 'Назад к тестам', tests_path %>
