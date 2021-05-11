@@ -1,13 +1,14 @@
-<p> <b>Test level:</b> <%= @question.test.level %> </p>
+<p> <b> Test level: </b> <%= @question.test.level %> </p>
 
   <p>
-  	<b>Question: </b>
+  	<b> Question: </b>
     <%= @question.body %> 
   </p>
   <p>
-   <b>Answers: </b>
+   <b> Answers: </b>
    <ol> <%= render @question.answers %> </ol>
   </p>
+
 <%= link_to 'New answer', new_question_answer_path(@question) %> <br> <br>
-<%= link_to 'Edit question', edit_question_path(@question) %><br>
+<%= link_to 'Edit question', edit_question_path(@question) %> <br>
 <%= link_to 'Back to test', test_path(@question.test) %>
