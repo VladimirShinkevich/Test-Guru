@@ -24,35 +24,32 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-  	if correct_answer?(answer_ids)
-  		self.correct_questions += 1
+  	if correct_answers?(answer_ids)
+  	  self.correct_questions += 1
   	end
   	save!
   end
 
   private
 
-  def correct_answer?(answer_ids)
-  	correct_answers_count = correct_answers.count
-  	(correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-  	correct_answers_count == answer_ids.count
+  def correct_answers?(answer_ids)
+    (answer_ids && correct_answer.ids.sort == answer_ids.map(&:to_i).sort) || (answer_ids.nil? && correct_answer.count == 0)
   end
 
-  def correct_answers
+  def correct_answer
   	current_question.answers.right_answer
   end
 
   def next_question
-    if current_question.nil?
-      self.current_question = test.questions.first 
-    else
-      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
-    end
-
+    self.current_question = 
+      if current_question.nil?
+        test.questions.first 
+      else
+        test.questions.order(:id).where('id > ?', current_question.id).first
+      end
   end
 
   def set_next_question
     self.current_question = next_question
   end
-
 end

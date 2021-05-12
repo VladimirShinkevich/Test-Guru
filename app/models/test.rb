@@ -18,5 +18,4 @@ class Test < ApplicationRecord
   def self.titles_by_categories(category_title)
     by_categories(category_title).pluck(:title)
   end
- 
 end

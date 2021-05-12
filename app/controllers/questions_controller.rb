@@ -52,5 +52,4 @@ class QuestionsController < ApplicationController
   def rescue_with_question_not_find
     render plain: "Question not found!"
   end
-
 end

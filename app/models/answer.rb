@@ -9,5 +9,4 @@ class Answer < ApplicationRecord
   def maximum_number_of_answers
     errors.add(:base, 'Cannot be greater than 4!!!') if question.answers.count >= 4
   end
-
 end
