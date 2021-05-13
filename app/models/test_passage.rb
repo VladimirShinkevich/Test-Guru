@@ -16,28 +16,29 @@ class TestPassage < ApplicationRecord
   end
 
   def complited?
-  	current_question.nil?
+    current_question.nil?
   end
 
   def number_of_question
-  	test.questions.count - test.questions.order(:id).where("id > ?", current_question.id).count
+    test.questions.count - test.questions.order(:id).where("id > ?", current_question.id).count
   end
 
   def accept!(answer_ids)
-  	if correct_answers?(answer_ids)
-  	  self.correct_questions += 1
-  	end
-  	save!
+    if correct_answers?(answer_ids)
+      self.correct_questions += 1
+    end
+    save!
   end
 
   private
 
   def correct_answers?(answer_ids)
-    (answer_ids && correct_answer.ids.sort == answer_ids.map(&:to_i).sort) || (answer_ids.nil? && correct_answer.count == 0)
+    return false if answer_ids.nil?
+    correct_answer.ids.sort == answer_ids.map(&:to_i).sort
   end
 
   def correct_answer
-  	current_question.answers.right_answer
+    current_question.answers.right_answer
   end
 
   def next_question
