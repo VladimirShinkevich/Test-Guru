@@ -1,22 +1,22 @@
 class TestPassagesController < ApplicationController
- 	before_action :set_test_passage
-  
-  def show; end
+	before_action :set_test_passage
+	
+	def show; end
 
-  def result; end
+	def result; end
 
-  def update
+	def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.complited?
       redirect_to result_test_passage_path(@test_passage)
-  	else
-  	  render :show
-  	end
-  end
+    else
+      render :show
+    end
+	end
 
-  private
+	private
 
-  def set_test_passage
-    @test_passage = TestPassage.find(params[:id])
-  end
+	def set_test_passage
+		@test_passage = TestPassage.find(params[:id])
+	end
 end

@@ -1,5 +1,5 @@
 class TestPassage < ApplicationRecord
-	SUCCESS_RATE = 85
+  SUCCESS_RATE = 85
 
   belongs_to :user
   belongs_to :test
