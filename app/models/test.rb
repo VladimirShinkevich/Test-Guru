@@ -3,8 +3,8 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   has_many :questions, dependent: :destroy
-  has_many :pass_tests, dependent: :destroy
-  has_many :users, through: :pass_tests
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :level } 
@@ -18,5 +18,4 @@ class Test < ApplicationRecord
   def self.titles_by_categories(category_title)
     by_categories(category_title).pluck(:title)
   end
- 
 end
