@@ -1,9 +1,15 @@
-<h1>Question</h1>
+<p> <b> Test level: </b> <%= @question.test.level %> </p>
 
-<h3>Body</h3>
-  <p> <%= @question.body %> </p>
-<h3>Test title</h3>
-  <p> <%= @question.test.title %> </p>
+  <p>
+    <b> Question: </b>
+    <%= @question.body %> 
+  </p>
+  
+  <p>
+   <b> Answers: </b>
+   <ol> <%= render @question.answers %> </ol>
+  </p>
 
-<%= link_to 'Edit question', edit_question_path(@question) %><br>
+<%= link_to 'Create new answer', new_question_answer_path(@question) %> <br> <br>
+<%= link_to 'Edit question', edit_question_path(@question) %> <br>
 <%= link_to 'Back to test', test_path(@question.test) %>
