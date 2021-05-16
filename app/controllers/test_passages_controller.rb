@@ -1,4 +1,5 @@
 class TestPassagesController < ApplicationController
+  before_action :autheticate_user!
   before_action :set_test_passage
   
   def show; end

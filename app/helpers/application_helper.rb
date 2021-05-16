@@ -7,4 +7,7 @@ module ApplicationHelper
     link_to "Project TestGuru", "https://github.com/#{author}/#{repo}", target: "_blank"
   end	
 
+  def show_flash_message(message)
+    tag.p(flash[message], class: "flash #{message}") if flash[message]
+  end
 end
