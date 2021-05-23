@@ -1,9 +1,10 @@
-class TestsMailer < ApplicationMailer
-  
-  def complited_test(test_passage)
-  	@user = test_passage.user
-  	@test = test_passage.test
+# frozen_string_literal: true
 
-  	mail to: @user.email, subject: 'You just complited the TestGuru test!'
+class TestsMailer < ApplicationMailer
+  def complited_test(test_passage)
+    @user = test_passage.user
+    @test = test_passage.test
+
+    mail to: @user.email, subject: 'Вы закончили проходить тест!'
   end
 end

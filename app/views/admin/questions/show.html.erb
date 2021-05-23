@@ -10,6 +10,6 @@
    <ol> <%= render @question.answers %> </ol>
   </p>
 
-<%= link_to 'Create new answer', new_admin_question_answer_path(@question) %> <br> <br>
-<%= link_to 'Edit question', edit_admin_question_path(@question) %> <br>
-<%= link_to 'Back to test', admin_test_path(@question.test) %>
+<%= link_to 'Создать новый ответ', new_admin_question_answer_path(@question) %> <br> <br>
+<%= link_to 'Редактировать вопрос', edit_admin_question_path(@question) %> <br>
+<%= link_to 'Назад к тесту', admin_test_path(@question.test) %>

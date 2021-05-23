@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
@@ -37,7 +39,7 @@ class Admin::AnswersController < Admin::BaseController
   def find_question
     @question = Question.find(params[:question_id])
   end
-   
+
   def set_answer
     @answer = Answer.find(params[:id])
   end

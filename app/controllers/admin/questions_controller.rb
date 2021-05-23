@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::QuestionsController < Admin::BaseController
   before_action :find_question, only: %i[show edit update destroy]
   before_action :find_test, only: %i[new create]
@@ -7,7 +9,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def new
     @question = @test.questions.new
-  end 
+  end
 
   def create
     @question = @test.questions.new(question_params)
@@ -15,7 +17,7 @@ class Admin::QuestionsController < Admin::BaseController
       redirect_to [:admin, @question]
     else
       render :new
-    end   
+    end
   end
 
   def edit
@@ -27,7 +29,7 @@ class Admin::QuestionsController < Admin::BaseController
       redirect_to [:admin, @question]
     else
       render :edit
-    end  
+    end
   end
 
   def destroy
@@ -50,6 +52,6 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def rescue_with_question_not_find
-    render plain: "Question not found!"
+    render plain: 'Question not found!'
   end
 end
