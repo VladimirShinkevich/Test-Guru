@@ -1,28 +1,27 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-   
-  get :singup, to: "users#new"
-  get :login, to: "sessions#new"
-  delete :logout, to: "sessions#destroy"
+  root 'tests#index'
 
-  resources :users, only: :create
-  resources :sessions, only: :create
+  devise_for :users, path: :gurus, path_names: { sing_in: :login, sing_out: :logout }, controllers: { sessions: "users/sessions" }
 
-  resources :tests do
-    resources :questions, shallow: true, expend: :index do
-      resources :answers, shallow: true, expend: :index
-    end
-   
+  resources :tests, only: :index do
     member do
       post :start
     end
-  end 
- 
+  end
+
   resources :test_passages, only: %i[show update] do
     member do
       get :result
     end
   end
 
-  root 'tests#index'
-
+  namespace :admin do
+    resources :tests do
+      resources :questions, shallow: true, expend: :index do
+        resources :answers, shallow: true, expend: :index
+      end
+    end
+  end
 end

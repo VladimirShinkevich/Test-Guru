@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class TestPassagesController < ApplicationController
-  before_action :autheticate_user!
+  before_action :authenticate_user!
   before_action :set_test_passage
-  
+
   def show; end
 
   def result; end
@@ -9,6 +11,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.complited?
+      TestsMailer.complited_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
