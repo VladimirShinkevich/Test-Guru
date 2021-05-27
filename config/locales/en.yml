@@ -1,33 +1,137 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  sessions:
+    sign_in_message: "%{first_name} %{last_name}, welcome to TestGuru!"
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        title: "Title"
+      answer:
+        body: "Answer"
+        correct: "Correct"
+    select:
+      prompt: "Select"
+  admin:
+    tests:
+      index:
+        header: "Tests"
+        title: "Title"
+        level: "Level"
+        num_of_questions: "Number of questions"
+        action: "Action"
+        create_test: "Create new test"
+      show:
+        title: "Test title:"
+        level: "Test level:"
+        questions: "Questions:"
+        create_question: "Create new question"
+        edit: "Edit test"
+        back_to_tests: "Back to tests"
+      new:
+        create_test: "Create New Test" 
+        back_to_tests: "Back to tests"
+      create:
+        success: "Test successfully create!!!" 
+      edit:
+        edit: "Edit test"
+        back_to_tests: "Back to tests"
+      update:
+        success: "Test successfully update!!!"
+      destroy:
+        success: "Test successfully delete!!!"
+      test:
+        show: "Show test"
+        edit: "Edit test"
+        delete: "Delete test"
+        confirm: "Are you sure?"
+    questions:
+      show:
+        level: "Test level:"
+        question: "Question:"
+        answer: "Answers:"
+        create_question: "Create_new_question"
+        edit: "Edit question"
+        back_to_test: "Back to test"
+      new:
+        back_to_test: "Back to test"
+      edit:
+        back_to_test: "Back to test"
+      question:
+        show: "Show Question"
+        edit: "Edit Question"
+        delete: "Delete Question"
+        confirm: "Are you sure?"
+    answers:
+      answer:
+        show: "Show Answer"
+        edit: "Edit Answer"
+        delete: "Delete Answer"
+        confirm: "Are you sure?" 
+      edit: 
+        edit_title: "Editing Answer"
+        back_to_answer: "Back to answer"
+      new:
+        new_title: "New Answer"
+        back_to_answer: "Back to answer"
+      show:
+        question: "Question:"
+        answer: "Answer:"
+        correct: "Correct:"
+        back_to_answer: "Back to answer"
+  tests:
+    index:
+      header: "Tests"
+      title: "Title"
+      level: "Level"
+      num_of_questions: "Number of questions"
+      action: "Action"
+    test:
+      button_start: "Start"
+  nav:
+    admin_panel: "TestGuru Admin Panel"
+    logout: "Logout"
+    welcome: "Welcome"
+  test_passages:
+    result:
+      header: "Test Complete!!!"
+      unsuccess_header: "The %{title} test wasn't passed!"
+      success_header: "The %{title} test was successfully passed!"
+      result: "You result:"
+      back_to_tests: "Back to tests"
+    show:
+      passing: "Passing the %{test} test"
+      questions_num: "Total number of questions: %{size}"
+      current_question_num: "The number of the current question: %{num}"
+      next: "Next"   
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'
+  activerecord:
+    model:
+      test: "Test"
+      attributes:
+        test:
+          title: "Title"
+          level: "Level"
+          category: "Category"
+      errors:
+        messages:
+          blank: "can't be blank"    

@@ -7,7 +7,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :set_next_question
+  before_validation :before_validation_set_next_question
 
   def success?
     pass_rate >= SUCCESS_RATE
@@ -17,7 +17,7 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count) * 100
   end
 
-  def complited?
+  def completed?
     current_question.nil?
   end
 
@@ -34,7 +34,6 @@ class TestPassage < ApplicationRecord
 
   def correct_answers?(answer_ids)
     return false if answer_ids.nil?
-
     correct_answer.ids.sort == answer_ids.map(&:to_i).sort
   end
 
@@ -51,7 +50,7 @@ class TestPassage < ApplicationRecord
       end
   end
 
-  def set_next_question
+  def before_validation_set_next_question
     self.current_question = next_question
   end
 end

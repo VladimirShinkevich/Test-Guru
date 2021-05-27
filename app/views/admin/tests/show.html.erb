@@ -1,6 +1,6 @@
-<h3> Test title: <%= @test.title %> </h3>
-<h3> Test level: <%= @test.level %> </h3>
-<h3> Questions: </h3>
+<h3> <%= t(".title")%> <%=@test.title %> </h3>
+<h3> <%= t(".level")%> <%= @test.level %> </h3>
+<h3> <%= t(".questions") %> </h3>
 
 <ol> <%= render @test.questions  %> <br> </ol>
     <table>
@@ -9,6 +9,6 @@
       </tr>
     </table>
 
-<%= link_to 'Создать новый вопрос', new_admin_test_question_path(@test) %> <br>
-<%= link_to 'Редактировать тест', edit_admin_test_path(@test) %> <br>
-<%= link_to 'Назад к тестам', admin_tests_path %>
+<%= link_to t(".create_question"), new_admin_test_question_path(@test) %> <br>
+<%= link_to t(".edit"), edit_admin_test_path(@test) %> <br>
+<%= link_to t(".back_to_tests"), admin_tests_path %>

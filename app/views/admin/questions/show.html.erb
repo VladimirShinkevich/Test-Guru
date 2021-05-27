@@ -1,15 +1,15 @@
-<p> <b> Test level: </b> <%= @question.test.level %> </p>
+<p> <b> <%= t('.level') %> </b> <%= @question.test.level %> </p>
 
   <p>
-    <b> Question: </b>
+    <b> <%= t('.question') %> </b>
     <%= @question.body %> 
   </p>
   
   <p>
-   <b> Answers: </b>
+   <b> <%= t('.answer') %> </b>
    <ol> <%= render @question.answers %> </ol>
   </p>
 
-<%= link_to 'Создать новый ответ', new_admin_question_answer_path(@question) %> <br> <br>
-<%= link_to 'Редактировать вопрос', edit_admin_question_path(@question) %> <br>
-<%= link_to 'Назад к тесту', admin_test_path(@question.test) %>
+<%= link_to t('.create_question'), new_admin_question_answer_path(@question) %> <br> <br>
+<%= link_to t('.edit'), edit_admin_question_path(@question) %> <br>
+<%= link_to t('.back_to_test'), admin_test_path(@question.test) %>
