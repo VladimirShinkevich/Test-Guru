@@ -18,10 +18,16 @@ ru:
         level: "Уровень"
         category_id: "Категория"
       question:
-        title: "Название"
+        question: "Название"
       answer:
         body: "Ответ"
         correct: "Корректность"
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
     select:
       prompt: "Выбрать"
   admin:
@@ -41,7 +47,7 @@ ru:
         edit: "Редактировать вопрос"
         back_to_tests: "Назад к тестам"
       new:
-        create_test: "Создать новый вопрос" 
+        create_test: "Создать новый тест" 
         back_to_tests: "Назад к тестам"
       create:
         success: "Тест успешно создан!!!" 
@@ -62,12 +68,14 @@ ru:
         level: "Уровень теста:"
         question: "Вопрос:"
         answer: "Ответы:"
-        create_question: "Создать новый вопрос"
+        create_answer: "Создать новый ответ"
         edit: "Редактировать вопрос"
         back_to_test: "Назад к тесту"
       new:
+        create_question: "Создать новый вопрос по %{title}"
         back_to_test: "Назад к тесту"
       edit:
+        edit: "Редактировать вопрос по %{title}"
         back_to_test: "Назад к тесту"
       question:
         show: "Показать вопрос"
@@ -129,11 +137,31 @@ ru:
   activerecord:
     model:
       test: "Тест"
-      attributes:
-        test:
-          title: "Название"
-          level: "Уровень"
-          category: "Категория"
-      errors:
-        messages:
-          blank: "не может быть пустым!"    
+      question: "Вопрос"
+      answer: "Ответ"
+      category: "Категория"
+      user: "Пользователь"
+      test_passage: "Прохождение теста"
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        author: "Автор"
+      users:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
+      answer:
+        body: "Ответ"
+        correct: "Корректность"
+      category:
+        title: "Название"
+      question:
+        body: "Вопрос"
+    errors:
+      messages:
+        blank: "не может быть пустым!"    

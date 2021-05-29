@@ -10,6 +10,6 @@
    <ol> <%= render @question.answers %> </ol>
   </p>
 
-<%= link_to t('.create_question'), new_admin_question_answer_path(@question) %> <br> <br>
+<%= link_to t('.create_answer'), new_admin_question_answer_path(@question) %> <br> <br>
 <%= link_to t('.edit'), edit_admin_question_path(@question) %> <br>
 <%= link_to t('.back_to_test'), admin_test_path(@question.test) %>

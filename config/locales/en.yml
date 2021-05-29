@@ -22,6 +22,12 @@ en:
       answer:
         body: "Answer"
         correct: "Correct"
+      user:
+        first_name: "First name"
+        last_name: "Last name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
     select:
       prompt: "Select"
   admin:
@@ -38,7 +44,7 @@ en:
         level: "Test level:"
         questions: "Questions:"
         create_question: "Create new question"
-        edit: "Edit test"
+        edit: "Edit question"
         back_to_tests: "Back to tests"
       new:
         create_test: "Create New Test" 
@@ -62,12 +68,14 @@ en:
         level: "Test level:"
         question: "Question:"
         answer: "Answers:"
-        create_question: "Create_new_question"
-        edit: "Edit question"
+        create_answer: "Create new question"
+        edit: "Edit answer"
         back_to_test: "Back to test"
       new:
+        create_question: "Create new %{title} question"
         back_to_test: "Back to test"
       edit:
+        edit: "Edit %{title} question"
         back_to_test: "Back to test"
       question:
         show: "Show Question"
@@ -127,11 +135,31 @@ en:
   activerecord:
     model:
       test: "Test"
-      attributes:
-        test:
-          title: "Title"
-          level: "Level"
-          category: "Category"
-      errors:
-        messages:
-          blank: "can't be blank"    
+      question: "Question"
+      answer: "Answer"
+      category: "Category"
+      user: "User"
+      test_passage: "Test passage"
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        author: "Author"
+      users:
+        first_name: "First name"
+        last_name: "Last name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        remember_me: "Remember me"
+      answer:
+        body: "Body"
+        correct: "Correct"
+      category:
+        title: "Title"
+      question:
+        body: "Body"
+    errors:
+      messages:
+        blank: "can't be blank"    
