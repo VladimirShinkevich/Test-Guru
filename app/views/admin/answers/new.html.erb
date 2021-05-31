@@ -1,6 +1,6 @@
-<h3>New Answer</h3>
+<h3> <%= t('.new_title') %></h3>
 
 <%= @question.body %>
 
 <%= render 'form' %>
-<%= link_to 'Назад к вопросу', admin_question_path(@question) %>
+<%= link_to t('.back_to_answer'), admin_question_path(@question) %>

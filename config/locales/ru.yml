@@ -1,0 +1,167 @@
+ru:
+  sessions:
+    sign_in_message: "%{first_name} %{last_name}, добропожаловать в TestGuru!"
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        question: "Название"
+      answer:
+        body: "Ответ"
+        correct: "Корректность"
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+    select:
+      prompt: "Выбрать"
+  admin:
+    tests:
+      index:
+        header: "Тесты"
+        title: "Название"
+        level: "Уровень"
+        num_of_questions: "Количество вопросов"
+        action: "Действие"
+        create_test: "Создать новый тест"
+      show:
+        title: "Название теста:"
+        level: "Уровень теста:"
+        questions: "Вопросы:"
+        create_question: "Создать новый вопрос"
+        edit: "Редактировать тест"
+        back_to_tests: "Назад к тестам"
+      new:
+        create_test: "Создать новый тест" 
+        back_to_tests: "Назад к тестам"
+      create:
+        success: "Тест успешно создан!!!" 
+      edit:
+        edit: "Редактировать тест"
+        back_to_tests: "Назад к тестам"
+      update:
+        success: "Тест успешно обновлен!!!"
+      destroy:
+        success: "Тест успешно удален!!!"
+      test:
+        show: "Показать тест"
+        edit: "Редактировать тест"
+        delete: "Удалить тест"
+        confirm: "Вы уверены?"
+    questions:
+      show:
+        level: "Уровень теста:"
+        question: "Вопрос:"
+        answer: "Ответы:"
+        create_answer: "Создать новый ответ"
+        edit: "Редактировать вопрос"
+        back_to_test: "Назад к тесту"
+      new:
+        create_question: "Создать новый вопрос по %{title}"
+        back_to_test: "Назад к тесту"
+      edit:
+        edit: "Редактировать вопрос по %{title}"
+        back_to_test: "Назад к тесту"
+      question:
+        show: "Показать вопрос"
+        edit: "Редактировать вопрос"
+        delete: "Удалить вопрос"
+        confirm: "Вы уверены?"
+    answers:
+      answer:
+        show: "Показать ответ"
+        edit: "Редактировать ответ"
+        delete: "Удалить ответ"
+        confirm: "Вы уверены?" 
+      edit: 
+        edit_title: "Редактировать ответ"
+        back_to_answer: "Назад к ответам"
+      new:
+        new_title: "Новый ответ"
+        back_to_answer: "Назад к ответам"
+      show:
+        question: "Вопрос:"
+        answer: "Ответ:"
+        correct: "Корректность:"
+        back_to_answer: "Назад к ответам"
+  tests:
+    index:
+      header: "Тесты"
+      title: "Название"
+      level: "Уровень"
+      num_of_questions: "Количество вопросов"
+      action: "Действие"
+    test:
+      button_start: "Начать"
+  nav:
+    admin_panel: "Панель администратора TestGuru"
+    logout: "Выход"
+    welcome: "добропожаловать"
+  test_passages:
+    result:
+      header: "Тест завершен!!!"
+      unsuccess_header: "Тест по %{title} не сдан!"
+      success_header: "Тест по %{title} сдан!"
+      result: "Ваш результат:"
+      back_to_tests: "Назад к тестам"
+    show:
+      passing: "Пройдите тест по %{test}"
+      questions_num: "Количество вопросов: %{size}"
+      current_question_num: "Номер текущего вопроса: %{num}"
+      next: "Далее"   
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки:"
+        many: "Обнаружено %{count} ошибок:"
+        one: "Обнаружена %{count} ошибка:"
+        other: "Обнаружено %{count} ошибки:"
+  tests_mailer:
+    completed_test:
+      subject: 'Вы только что прошли Тест!'
+  activerecord:
+    model:
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      category: "Категория"
+      user: "Пользователь"
+      test_passage: "Прохождение теста"
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        author: "Автор"
+      users:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
+      answer:
+        body: "Ответ"
+        correct: "Корректность"
+      category:
+        title: "Название"
+      question:
+        body: "Вопрос"
+    errors:
+      messages:
+        blank: "не может быть пустым!"    
