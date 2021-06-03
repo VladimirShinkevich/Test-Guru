@@ -1,6 +1,10 @@
-<h3> <%= t('.new_title') %></h3>
+<div class="card justify-content-center mt-3 border-primary">
+  <div class="col col-md-4">
+	<h3> <%= t('.new_title') %></h3>
 
-<%= @question.body %>
+	<%= @question.body %>
 
-<%= render 'form' %>
-<%= link_to t('.back_to_answer'), admin_question_path(@question) %>
+	<%= render 'form' %>
+	<%= link_to t('.back_to_answer'), admin_question_path(@question) %>
+  </div>
+</div>

@@ -1,5 +1,13 @@
-<h3> <%= t(".edit") %> </h3>
+<div class="card justify-content-center mt-3 border-primary">
+  <div class="col col-md-4">
+	  <h3> <%= t(".edit") %> </h3>
+	  <div class="card border-primary">
+	    <div class="card-body">
 
-<%= render 'form' %>
+		  <%= render 'form' %>
 
-<%= link_to t(".back_to_tests"), admin_tests_path %>
+		  <%= link_to t('.back_to_tests'), admin_tests_path %>
+	   </div>  
+	  </div>
+ </div>
+</div>

@@ -1,8 +1,9 @@
 <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
   <%= render 'shared/errors', resource: @answer %>
+  <div class="form-group">
   <p>
     <%= form.label :body %> <br>
-    <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60 %>
+    <%= form.text_area :body, id: :answer_body, rows: 7, cols: 60, class: "form-control" %>
   </p>
   
   <p>
@@ -10,5 +11,6 @@
     <%= form.check_box :correct, id: :answer_correct %>
   </p>
 
-  <p> <%= form.submit %> </p>
+  <p> <%= form.submit class: "btn btn-primary"%> </p>
+  </div>
 <% end %>

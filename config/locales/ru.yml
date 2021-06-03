@@ -125,6 +125,11 @@ ru:
       current_question_num: "Номер текущего вопроса: %{num}"
       next: "Далее"   
   shared:
+    navbar:
+      logout: "Выход"
+      welcome: "Добро пожаловать"
+      login: "Вход"
+      signup: "Регистрация"
     errors:
       header:
         few: "Обнаружено %{count} ошибки:"

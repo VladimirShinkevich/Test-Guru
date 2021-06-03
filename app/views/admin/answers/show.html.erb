@@ -1,7 +1,12 @@
-<p> <b> <%= t('.question') %> </b> <%= @answer.question.body %> </p>
+<div class="card justify-content-center mt-3 border-primary">
+  <div class="col col-md-4">
 
-<p> <b> <%= t('.answer') %> </b> <%= @answer.body %> </p>
+	<p> <b> <%= t('.question') %> </b> <%= @answer.question.body %> </p>
 
-<p> <b> <%= t('.correct') %> </b> <%= @answer.correct %> </p>
+	<p> <b> <%= t('.answer') %> </b> <%= @answer.body %> </p>
 
-<%= link_to t('.back_to_answer'), admin_question_path(@answer.question) %>
+	<p> <b> <%= t('.correct') %> </b> <%= @answer.correct %> </p>
+
+	<%= link_to t('.back_to_answer'), admin_question_path(@answer.question) %>
+ </div>
+</div>
