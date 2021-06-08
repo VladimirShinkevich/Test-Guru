@@ -125,6 +125,11 @@ en:
       current_question_num: "The number of the current question: %{num}"
       next: "Next"   
   shared:
+    navbar:
+      welcome: "Welcome"
+      logout: "Logout"
+      login: "Log in"
+      signup: "Sign up"
     errors:
       header:
         one: "%{count} error detected"

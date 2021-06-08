@@ -1,15 +1,19 @@
-<p> <b> <%= t('.level') %> </b> <%= @question.test.level %> </p>
+<div class="card justify-content-center mt-3 border-primary">
+  <div class="col col-md-4">
+    <p> <b> <%= t('.level') %> </b> <%= @question.test.level %> </p>
 
-  <p>
-    <b> <%= t('.question') %> </b>
-    <%= @question.body %> 
-  </p>
-  
-  <p>
-   <b> <%= t('.answer') %> </b>
-   <ol> <%= render @question.answers %> </ol>
-  </p>
+      <p>
+        <b> <%= t('.question') %> </b>
+        <%= @question.body %> 
+      </p>
+      
+      <p>
+       <b> <%= t('.answer') %> </b>
+       <ol> <%= render @question.answers %> </ol>
+      </p>
 
-<%= link_to t('.create_answer'), new_admin_question_answer_path(@question) %> <br> <br>
-<%= link_to t('.edit'), edit_admin_question_path(@question) %> <br>
-<%= link_to t('.back_to_test'), admin_test_path(@question.test) %>
+    <%= link_to t('.create_answer'), new_admin_question_answer_path(@question), class: 'btn btn-primary' %> <br> <br>
+    <%= link_to t('.edit'), edit_admin_question_path(@question) %> <br>
+    <%= link_to t('.back_to_test'), admin_test_path(@question.test) %>
+ </div>
+</div>

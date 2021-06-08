@@ -1,15 +1,22 @@
-<h3> <%= question_header(@question) %> </h3>
+<div class="card justify-content-center mt-3 border-primary">
+  <div class="col col-md-4">
+    <h3> <%= question_header(@question) %> </h3>
+    <div class="card border-primary">
+      <div class="card-body">
+        <%= form_with model: [:admin, @question], local: true do |form| %>
+          <%= render "shared/errors", resource: @question %>
 
-<%= form_with model: [:admin, @question], local: true do |form| %>
-  <%= render "shared/errors", resource: @question %>
+          <p>
+            <%= form.label :question %> <br>
+            <%= form.text_field :body, id: :question_body, class: "form-control" %>
+          </p>
 
-  <p>
-    <%= form.label :question %> <br>
-    <%= form.text_field :body, id: :question_body %>
-  </p>
+          <p> <%= form.submit %> </p>
 
-  <p> <%= form.submit %> </p>
+        <% end %> 
 
-<% end %> 
-
-<%= link_to t('.back_to_test'), admin_test_path(@question.test) %>
+        <%= link_to t('.back_to_test'), admin_test_path(@question.test) %>
+     </div>  
+    </div>
+ </div>
+</div>
