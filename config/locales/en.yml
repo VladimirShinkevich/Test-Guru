@@ -123,7 +123,11 @@ en:
       passing: "Passing the %{test} test"
       questions_num: "Total number of questions: %{size}"
       current_question_num: "The number of the current question: %{num}"
-      next: "Next"   
+      next: "Next" 
+    gist:
+      success: "Gist create %{link_gist}"
+      failure: "An error occurred while saving gist"
+  shared:  
   shared:
     navbar:
       welcome: "Welcome"
@@ -167,4 +171,6 @@ en:
         body: "Body"
     errors:
       messages:
-        blank: "can't be blank"    
+        blank: "can't be blank"   
+    gist_question_service:
+      description: "Question from test %{test} in application TestGuru"   
