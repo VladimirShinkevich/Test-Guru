@@ -13,10 +13,9 @@
             </p>
             <% end %>
 
-          <p><%= link_to 'Gist', gist_test_passage_path(@test_passage), method: :post %></p>
+          <p><%= link_to 'Gist', gists_path(id: @test_passage.id), method: :post %></p>
           <p> <%= form.submit t('.next'), class: "btn btn-primary" %> </p>
         </div>
       <% end%>
   </div>
 </div>
-

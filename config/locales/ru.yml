@@ -124,9 +124,6 @@ ru:
       questions_num: "Количество вопросов: %{size}"
       current_question_num: "Номер текущего вопроса: %{num}"
       next: "Далее"   
-    gist:
-      success: "Gist успешно создан %{link_gist}"
-      failure: "Во время сохранения gist произошла ошибка"
   shared:
     navbar:
       logout: "Выход"
@@ -142,6 +139,11 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы только что прошли Тест!'
+  gists:
+    create:
+      success: "Gist был успешно создан!"
+      find_here: "Найти тут"
+      unsuccess: "Ошибка. Gist не был создан!"
   activerecord:
     model:
       test: "Тест"
@@ -173,5 +175,3 @@ ru:
     errors:
       messages:
         blank: "не может быть пустым!"  
-    gist_question_service:
-      description: "Вопрос из теста %{test} в приложении TestGuru"  

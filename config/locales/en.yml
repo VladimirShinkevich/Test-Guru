@@ -124,9 +124,6 @@ en:
       questions_num: "Total number of questions: %{size}"
       current_question_num: "The number of the current question: %{num}"
       next: "Next" 
-    gist:
-      success: "Gist create %{link_gist}"
-      failure: "An error occurred while saving gist"
   shared:  
   shared:
     navbar:
@@ -141,6 +138,11 @@ en:
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'
+  gists:
+    create:
+      success: "Gist was successfully created!"
+      find_here: "Find it here"
+      unsuccess: "Failure! Unable to create gist!"
   activerecord:
     model:
       test: "Test"
@@ -172,5 +174,3 @@ en:
     errors:
       messages:
         blank: "can't be blank"   
-    gist_question_service:
-      description: "Question from test %{test} in application TestGuru"   
