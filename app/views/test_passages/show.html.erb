@@ -12,10 +12,10 @@
               <%= b.label %>
             </p>
             <% end %>
-          
+
+          <p><%= link_to 'Gist', gists_path(id: @test_passage.id), method: :post %></p>
           <p> <%= form.submit t('.next'), class: "btn btn-primary" %> </p>
         </div>
       <% end%>
   </div>
 </div>
-

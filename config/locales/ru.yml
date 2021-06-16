@@ -139,6 +139,11 @@ ru:
   tests_mailer:
     completed_test:
       subject: 'Вы только что прошли Тест!'
+  gists:
+    create:
+      success: "Gist был успешно создан!"
+      find_here: "Найти тут"
+      unsuccess: "Ошибка. Gist не был создан!"
   activerecord:
     model:
       test: "Тест"
@@ -169,4 +174,4 @@ ru:
         body: "Вопрос"
     errors:
       messages:
-        blank: "не может быть пустым!"    
+        blank: "не может быть пустым!"  

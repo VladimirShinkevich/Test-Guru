@@ -123,7 +123,8 @@ en:
       passing: "Passing the %{test} test"
       questions_num: "Total number of questions: %{size}"
       current_question_num: "The number of the current question: %{num}"
-      next: "Next"   
+      next: "Next" 
+  shared:  
   shared:
     navbar:
       welcome: "Welcome"
@@ -137,6 +138,11 @@ en:
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'
+  gists:
+    create:
+      success: "Gist was successfully created!"
+      find_here: "Find it here"
+      unsuccess: "Failure! Unable to create gist!"
   activerecord:
     model:
       test: "Test"
@@ -167,4 +173,4 @@ en:
         body: "Body"
     errors:
       messages:
-        blank: "can't be blank"    
+        blank: "can't be blank"   

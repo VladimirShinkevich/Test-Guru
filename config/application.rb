@@ -15,6 +15,7 @@ module TestGuru
     config.time_zone = 'Moscow'
     config.i18n.available_locales = %i[en ru]
     config.i18n.default_locale = :ru
+    config.autoload_paths << "#{Rails.root}/lib/clients"
 
     # Configuration for the application, engines, and railties goes here.
     #
