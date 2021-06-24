@@ -56,6 +56,10 @@ ru:
         back_to_tests: "Назад к тестам"
       update:
         success: "Тест успешно обновлен!!!"
+      form_inline:
+        submit: "Ok"
+      update_inline:
+        success: "Тест успешно обновлен!!!"
       destroy:
         success: "Тест успешно удален!!!"
       test:
@@ -123,7 +127,9 @@ ru:
       passing: "Пройдите тест по %{test}"
       questions_num: "Количество вопросов: %{size}"
       current_question_num: "Номер текущего вопроса: %{num}"
-      next: "Далее"   
+      next: "Далее" 
+      question: "Вопрос: "
+      progress: "Прогресс: "  
   shared:
     navbar:
       logout: "Выход"
