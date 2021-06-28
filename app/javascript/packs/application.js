@@ -2,10 +2,10 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-require("utilities/sorting_table")
-require("utilities/password_confirmation")
-require("utilities/form_inline")
-require("utilities/progress_bar")
+require("sorting_table")
+require("password_confirmation")
+require("form_inline")
+require("progress_bar")
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
