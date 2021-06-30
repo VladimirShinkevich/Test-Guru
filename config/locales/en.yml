@@ -12,6 +12,8 @@ en:
       answer:
         create: "Create Answer"
         update: "Update Answer"
+      user:
+        create: "Registration"
     label:
       test:
         title: "Title"
@@ -30,7 +32,19 @@ en:
         password_confirmation: "Password confirmation"
     select:
       prompt: "Select"
+  devise:
+    registrations:
+      new:
+        header: "Registration"
+    sessions:
+      new:
+        header: "Enter"
+        remember: "Remember"
   admin:
+    nav:
+      admin_panel: "TestGuru Admin Panel"
+      logout: "Logout"
+      welcome: "Welcome"
     tests:
       index:
         header: "Tests"
@@ -110,10 +124,7 @@ en:
       action: "Action"
     test:
       button_start: "Start"
-  nav:
-    admin_panel: "TestGuru Admin Panel"
-    logout: "Logout"
-    welcome: "Welcome"
+  
   test_passages:
     result:
       header: "Test Complete!!!"

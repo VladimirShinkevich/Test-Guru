@@ -1,30 +1,35 @@
 export class FormInline {
 
-  constructor(editTestId) {
-    this.editTestId = document.getElementById(editTestId)
-    this.controls = document.querySelectorAll('.form-inline-link')
-    this.testId = document.querySelector('.form-inline-link').dataset.testId
-   
+  constructor(editTest) {
+    this.controls = document.querySelectorAll(editTest)
+    this.testId = this.controls
+    this.errors = document.querySelector('.resource-errors')
     this.setup()
   }
 
   setup() {
+
     if (this.controls.length) {
-      for (let i = 0; i < this.controls.length; i++) {
-        this.controls[i].addEventListener('click', event => { this.formInlineLinkHandler() })
-      }
+      this.controls.forEach((el) => {
+        el.addEventListener('click', event => { this.formInlineLinkHandler() })
+      })
     }
-     
-    let errors = document.querySelector('.resource-errors')
-    if(errors) {
-      let resourceId = errors.dataset.resourceId
+
+    if(this.errors) {
+      let resourceId = this.errors.dataset.resourceId
       formInlineHandler(resourceId)
     }
   }
 
   formInlineLinkHandler() {
     event.preventDefault()
-    this.formInlineHandler(this.testId)
+    
+    if(this.testId.length) {
+      this.testId.forEach((el) => {
+        const attr = el.dataset.testId 
+        this.formInlineHandler(attr)
+      })
+    }
   }
 
   formInlineHandler(testId) {
