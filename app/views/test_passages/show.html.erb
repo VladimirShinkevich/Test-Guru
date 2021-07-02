@@ -2,6 +2,9 @@
   <div class="col col-md-4">
       <h3> <%= t('.passing', test: @test_passage.test.title) %> test </h3>
       <div id="progress_bar">
+        <div class="progress">
+          <div class="progress-bar bg-info" role="progressbar"></div>
+        </div>
         <h3>
           <%= t('.progress') %> 
           <%= content_tag :b, "0 %", class: "progress-bar-value text-success", data: { current_question_number: @test_passage.number_of_question, questions_number: @test_passage.test.questions.size } %> 
