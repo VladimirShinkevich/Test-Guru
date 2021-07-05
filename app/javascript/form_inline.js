@@ -1,7 +1,9 @@
 import { FormInline } from './utilities/FormInline.js'
 
 document.addEventListener('turbolinks:load', function () {
-  const editTest = ".form-inline-link"
-  const edit = document.querySelectorAll(editTest)
-  if(edit) new FormInline(editTest)
+  const testRowsList = document.querySelectorAll(".js-test-inline-edit")
+
+  testRowsList.forEach(rowTest => {
+    new FormInline(rowTest)
+  })
 })

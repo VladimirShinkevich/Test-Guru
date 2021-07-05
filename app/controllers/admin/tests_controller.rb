@@ -2,7 +2,7 @@
 
 class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update destroy start update_inline]
-  before_action :set_tests, only: %i[index, update_inline]
+
   def index
     @tests = Test.all
   end
@@ -47,10 +47,6 @@ class Admin::TestsController < Admin::BaseController
 
   private
 
-  def set_tests
-    @tests = Test.all
-  end
-    
   def test_params
     params.require(:test).permit(:title, :level, :category_id, :author_id)   
   end

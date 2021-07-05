@@ -1,32 +1,29 @@
 export class FormInline {
 
-  constructor(editTest) {
-    this.testId = document.querySelectorAll(editTest)
-    this.allTests()
-  }
-
-  allTests() {
-  	this.testId.forEach((el) => {
-  		this.getEventClick(el)
-  	})
-  }
-
-  getEventClick(el) {
-  	el.addEventListener('click', event => {this.setAttr(el)})
+  constructor(rowTest) {
+    this.rowTest = rowTest
+    this.cellEdit = rowTest.querySelector('.js-form-inline-link')
+    this.getEventClick(this.cellEdit,this.rowTest)
   }
   
+  getEventClick(cellEdit,rowTest) {
+    cellEdit.addEventListener('click', event => {this.setAttr(cellEdit,rowTest)})
+  }
 
-  setAttr(el) {
-  	event.preventDefault()
-  	const form = document.querySelectorAll("form[data-test-id='" + el.dataset.testId + "']");
-    if (el.dataset.state === 'true') {
-      form[0].style.display = 'none';
-      el.dataset.state = 'false';
-      return el.textContent = 'Редактировать тест';
-    } else {
-      form[0].style.display = 'block';
-      el.dataset.state = 'true';
-      return el.textContent = 'Отмена';
+  setAttr(cellEdit,rowTest) {
+    event.preventDefault()
+
+    const testTitle = rowTest.querySelector('.js-test-title')
+    const formInLine = rowTest.querySelector('.js-form-inline')
+    
+    if(formInLine.classList.contains('hide')) {
+      testTitle.classList.add('hide')
+      formInLine.classList.remove('hide')
+      cellEdit.textContent = 'Отменить' }
+    else {
+      testTitle.classList.remove('hide')
+      formInLine.classList.add('hide')
+      cellEdit.textContent = 'Редактировать тест'
     }
   }
 }
