@@ -2,19 +2,21 @@
   <div class="card-body">
     <h1 class="text-center"> <%= t('.header') %> </h1>
 
-    <table class="table table-bordered table-hover table-success table-striped text-center", id="test_table">
-      <tr>
-        <th class="sort-by-title pointer"> 
-          <%= t('.title') %> 
-          <%= octicon 'arrow-up', class: 'text-success hide' %>
-          <%= octicon 'arrow-down', class: 'text-success hide' %>
-        <th> <%= t('.level') %> </th>
-        <th> <%= t(".num_of_questions") %> </th>
-        <th> <%= t('.action') %> </th>
-      </tr>
-
-      <%= render @tests %>
-
+    <table class="table table-bordered table-hover table-success table-striped text-center" id="test_table">
+      <thead>
+        <tr>
+          <th class="sort-by-title pointer"> 
+            <%= t('.title') %> 
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          <th> <%= t('.level') %> </th>
+          <th> <%= t(".num_of_questions") %> </th>
+          <th> <%= t('.action') %> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @tests %>
+      </tbody>
     </table>
   </div>
 </div>

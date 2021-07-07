@@ -12,6 +12,8 @@ ru:
       answer:
         create: "Создать ответ"
         update: "Обновить ответ"
+      user:
+        create: "Зарегистрироваться"
     label:
       test:
         title: "Название"
@@ -30,7 +32,19 @@ ru:
         password_confirmation: "Подтверждение пароля"
     select:
       prompt: "Выбрать"
+  devise:
+    registrations:
+      new:
+        header: "Регистрация"
+    sessions:
+      new:
+        header: "Вход"
+        remember: "Запомнить"
   admin:
+    nav:
+      admin_panel: "Панель администратора TestGuru"
+      logout: "Выход"
+      welcome: "Добропожаловать"
     tests:
       index:
         header: "Тесты"
@@ -55,6 +69,10 @@ ru:
         edit: "Редактировать тест"
         back_to_tests: "Назад к тестам"
       update:
+        success: "Тест успешно обновлен!!!"
+      form_inline:
+        submit: "Ok"
+      update_inline:
         success: "Тест успешно обновлен!!!"
       destroy:
         success: "Тест успешно удален!!!"
@@ -108,10 +126,6 @@ ru:
       action: "Действие"
     test:
       button_start: "Начать"
-  nav:
-    admin_panel: "Панель администратора TestGuru"
-    logout: "Выход"
-    welcome: "добропожаловать"
   test_passages:
     result:
       header: "Тест завершен!!!"
@@ -123,7 +137,9 @@ ru:
       passing: "Пройдите тест по %{test}"
       questions_num: "Количество вопросов: %{size}"
       current_question_num: "Номер текущего вопроса: %{num}"
-      next: "Далее"   
+      next: "Далее" 
+      question: "Вопрос: "
+      progress: "Прогресс: "  
   shared:
     navbar:
       logout: "Выход"

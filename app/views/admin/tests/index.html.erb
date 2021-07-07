@@ -2,21 +2,25 @@
   <div class="card-body">
     <h1 class="text-center"> <%= t('.header') %> </h1>
 
-    <table class="table table-bordered table-hover table-success table-striped text-center", id="test_table">
-      <tr>
-        <th class="sort-by-title pointer"> 
-          <%= t('.title') %> 
-          <%= octicon 'arrow-up', class: 'text-success hide' %>
-          <%= octicon 'arrow-down', class: 'text-success hide' %>
+    <%= render 'shared/errors', resource: @test %>
+    
+    <table class="table table-bordered table-hover table-success table-striped text-center" id="test_table">
+      <thead>
+        <tr>
+          <th class="sort-by-title pointer"> 
+            <%= t('.title') %> 
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
 
-        </th>
-        <th> <%= t('.level') %> </th>
-        <th> <%= t(".num_of_questions") %> </th>
-        <th colspan="3"> <%= t('.action') %> </th>
-      </tr>
-
-      <%= render @tests %>
-
+          </th>
+          <th> <%= t('.level') %> </th>
+          <th> <%= t(".num_of_questions") %> </th>
+          <th colspan="3"> <%= t('.action') %> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @tests %>
+      </tbody>
     </table>
 
     <p> <%= link_to t('.create_test'), new_admin_test_path, class: 'btn btn-primary' %> </p>
