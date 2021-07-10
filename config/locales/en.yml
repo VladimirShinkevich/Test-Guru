@@ -40,6 +40,14 @@ en:
       new:
         header: "Enter"
         remember: "Remember"
+  feed_back:
+    index:
+      contact: "Contact us"
+      send: "Send"
+      back: "Back to tests"
+      message: "Enter message"
+    create:
+      success: "Message successfully send"
   admin:
     nav:
       admin_panel: "TestGuru Admin Panel"
@@ -140,6 +148,8 @@ en:
       question: "Question" 
       progress: "Progress: "  
   shared:
+    footer:
+      contact: "FeedBack"
     navbar:
       welcome: "Welcome"
       logout: "Logout"

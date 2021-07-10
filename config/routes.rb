@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   end
 
   resources :gists, only: :create
+
+  resources :feed_back
 end
