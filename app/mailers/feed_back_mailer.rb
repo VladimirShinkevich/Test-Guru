@@ -3,6 +3,6 @@ class FeedBackMailer < ApplicationMailer
 
   def create(message)
     @message = message
-    mail to: ADMIN_EMAIL
+    mail to: ADMIN_EMAIL, subject: "Feedback"
   end
 end
