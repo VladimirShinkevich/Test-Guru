@@ -40,6 +40,14 @@ ru:
       new:
         header: "Вход"
         remember: "Запомнить"
+  feed_back:
+    index:
+      contact: "Напишите нам"
+      send: "Отправить"
+      back: "Назад на страницу с тестами"
+      message: "Введите сообщение"
+    create:
+      success: 'Сообщение отправлено!'
   admin:
     nav:
       admin_panel: "Панель администратора TestGuru"
@@ -146,6 +154,8 @@ ru:
       welcome: "Добро пожаловать"
       login: "Вход"
       signup: "Регистрация"
+    footer:  
+      feedback: "Обратная связь"
     errors:
       header:
         few: "Обнаружено %{count} ошибки:"
