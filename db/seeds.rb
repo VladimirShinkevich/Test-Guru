@@ -22,7 +22,7 @@ categories = Category.create!([
 
 tests = Test.create!([
                        { title: 'HTML', category: categories[0], author: users[0] },
-                       { title: 'JavaScript', level: 1, category: categories[0], author_id: users[2] },
+                       { title: 'JavaScript', level: 1, category: categories[0], author: users[2] },
                        { title: 'Ruby', level: 2, category: categories[1], author: users[0] },
                        { title: 'Java', level: 3, category: categories[1], author: users[2] },
                        { title: 'Python', level: 2, category: categories[2], author: users[1] }
