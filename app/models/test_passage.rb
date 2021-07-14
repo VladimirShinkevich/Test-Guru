@@ -14,7 +14,7 @@ class TestPassage < ApplicationRecord
   end
 
   def pass_rate
-    (correct_questions.to_f / test.questions.count) * 100
+    ((correct_questions.to_f / test.questions.count) * 100).round
   end
 
   def completed?
