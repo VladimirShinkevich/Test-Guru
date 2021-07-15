@@ -9,6 +9,6 @@ class GistsController < ApplicationController
     else
       flash[:notice] = t(".unsuccess")
     end
-  redirect_to @test_passage
+    redirect_to @test_passage
   end
 end

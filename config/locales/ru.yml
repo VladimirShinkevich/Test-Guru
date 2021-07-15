@@ -32,14 +32,6 @@ ru:
         password_confirmation: "Подтверждение пароля"
     select:
       prompt: "Выбрать"
-  devise:
-    registrations:
-      new:
-        header: "Регистрация"
-    sessions:
-      new:
-        header: "Вход"
-        remember: "Запомнить"
   feed_back:
     index:
       contact: "Напишите нам"
