@@ -9,23 +9,23 @@
           <div class="form-group">
             <p>
               <%= f.label :first_name %>
-              <%= f.text_field :first_name, required: true, class: "form-control", placeholder: "Enter first name" %>
+              <%= f.text_field :first_name, required: true, class: "form-control", placeholder: t('.first_name') %>
             </p>
             
             <p>
               <%= f.label :last_name %>
-              <%= f.text_field :last_name, required: true, class: "form-control", placeholder: "Enter last name" %>
+              <%= f.text_field :last_name, required: true, class: "form-control", placeholder: t('.last_name') %>
             </p>
 
             <p>
               <%= f.label :email %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control", placeholder: "Enter email" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control", placeholder: t('.email') %>
             </p>
 
             <p>
               <%= f.label :password %>
                 <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <em> (<%= @minimum_password_length %> <%=t('.min') %>) </em>
               <% end %><br>
               <%= f.password_field :password, autocomplete: "new-password", id: "password" %>
             </p>

@@ -14,7 +14,7 @@ class TestPassage < ApplicationRecord
   end
 
   def pass_rate
-    (correct_questions.to_f / test.questions.count) * 100
+    ((correct_questions.to_f / test.questions.count) * 100).round
   end
 
   def completed?
@@ -43,11 +43,11 @@ class TestPassage < ApplicationRecord
 
   def next_question
     self.current_question =
-      if current_question.nil?
-        test.questions.first
-      else
-        test.questions.order(:id).where('id > ?', current_question.id).first
-      end
+    if current_question.nil?
+      test.questions.first
+    else
+      test.questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
 
   def before_validation_set_next_question

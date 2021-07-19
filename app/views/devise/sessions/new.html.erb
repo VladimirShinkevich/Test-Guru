@@ -7,12 +7,12 @@
             <div class="form-group">
               <p>
                 <%= f.label :email %><br/>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter email" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t('.email') %>
               </p>
               
               <p>
                 <%= f.label :password %><br/>
-                <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Enter password" %>
+                <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: t('.enter_password') %>
               </p>
 
               <% if devise_mapping.rememberable? %>
@@ -24,7 +24,7 @@
                 </div>
               <% end %>
 
-              <%= f.submit "Войти", class: "btn btn-primary" %>
+              <%= f.submit t('.enter'), class: "btn btn-primary" %>
             </div>
           <% end %>
         </div>  

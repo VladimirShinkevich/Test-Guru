@@ -13,6 +13,6 @@ export class ProgressBar {
     const PROGRESS = ((this.currentQuestionNumber - 1) / this.questionsNumber) * 100
 
     this.progressBar.style.width = '' + PROGRESS + '%'
-    this.progressBarValue.textContent = '' + PROGRESS + '%'
+    this.progressBarValue.textContent = '' + PROGRESS.toFixed() + '%'
   }
 }

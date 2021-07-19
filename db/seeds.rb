@@ -21,64 +21,53 @@ categories = Category.create!([
                               ])
 
 tests = Test.create!([
-                       { title: 'HTML', category_id: categories[0].id, author_id: users[0].id },
-                       { title: 'JavaScript', level: 1, category_id: categories[0].id, author_id: users[2].id },
-                       { title: 'Ruby', level: 2, category_id: categories[1].id, author_id: users[0].id },
-                       { title: 'Java', level: 3, category_id: categories[1].id, author_id: users[2].id },
-                       { title: 'Python', level: 2, category_id: categories[2].id, author_id: users[1].id }
+                       { title: 'HTML', category: categories[0], author: users[0] },
+                       { title: 'JavaScript', level: 1, category: categories[0], author: users[2] },
+                       { title: 'Ruby', level: 2, category: categories[1], author: users[0] },
+                       { title: 'Java', level: 3, category: categories[1], author: users[2] },
+                       { title: 'Python', level: 2, category: categories[2], author: users[1] }
                      ])
 
 questions = Question.create!([
-                               { body: 'What is the <a> tag used for?', test_id: tests[0].id },
-                               { body: 'Choose the right statements for callbacks', test_id: tests[1].id },
+                               { body: 'What is the <a> tag used for?', test: tests[0] },
+                               { body: 'Choose the right statements for callbacks', test: tests[1] },
                                { body: 'How many messages will be printed to the console? for(var i = 10; i < 35; i += 5) { console.log(i); }',
-                                 test_id: tests[1].id },
+                                 test: tests[1] },
                                { body: 'Select the method to get the whole inheritance chain for object',
-                                 test_id: tests[2].id },
+                                 test: tests[2] },
                                { body: 'What does the following code return? p [1, 2, 3, 4, 5].reduce {|m, x| m * x }',
-                                 test_id: tests[2].id },
-                               { body: 'Does Java support multiple inheritance?', test_id: tests[3].id },
-                               { body: 'How many arguments can lamda function take?', test_id: tests[4].id }
+                                 test: tests[2] },
+                               { body: 'Does Java support multiple inheritance?', test: tests[3] },
+                               { body: 'How many arguments can lamda function take?', test: tests[4] }
                              ])
 
-answers = Answer.create!([
-                           { body: 'To define header', question_id: questions[0].id },
-                           { body: 'To print text', question_id: questions[0].id },
-                           { body: 'To create links', correct: true, question_id: questions[0].id },
+Answer.create!([
+                 { body: 'To define header', question: questions[0] },
+                 { body: 'To print text', question: questions[0] },
+                 { body: 'To create links', correct: true, question: questions[0] },
 
-                           { body: 'A callback is a function passed as an argument to another function', correct: true,
-                             question_id: questions[1].id },
-                           {
-                             body: 'Where callbacks really shine are in asynchronous functions, where one function has to wait for another function ', correct: true, question_id: questions[1].id
-                           },
-                           { body: "Javascript doesn't support callback functions", question_id: questions[1].id },
+                 { body: 'A callback is a function passed as an argument to another function', correct: true, question: questions[1] },
+                 { body: 'Where callbacks really shine are in asynchronous functions, where one function has to wait for another function ', correct: true, questiond: questions[1] },
+                 { body: "Javascript doesn't support callback functions", question: questions[1] },
 
-                           { body: '5', question_id: questions[2].id },
-                           { body: '6', correct: true, question_id: questions[2].id },
-                           { body: '0', question_id: questions[2].id },
-                           { body: '7', question_id: questions[2].id },
+                 { body: '5', question: questions[2] },
+                 { body: '6', correct: true, question: questions[2] },
+                 { body: '0', question: questions[2] },
+                 { body: '7', question: questions[2] },
 
-                           { body: '.class', question_id: questions[3].id },
-                           { body: '.superclass', question_id: questions[3].id },
-                           { body: '.ancestors ', correct: true, question_id: questions[3].id },
+                 { body: '.class', question: questions[3] },
+                 { body: '.superclass', question: questions[3] },
+                 { body: '.ancestors ', correct: true, question: questions[3] },
 
-                           { body: '15', question_id: questions[4].id },
-                           { body: '120', correct: true, question_id: questions[4].id },
-                           { body: '0', question_id: questions[4].id },
+                 { body: '15', question: questions[4] },
+                 { body: '120', correct: true, question: questions[4] },
+                 { body: '0', question: questions[4] },
 
-                           { body: 'Yes', correct: true, question_id: questions[5].id },
-                           { body: 'No', question_id: questions[5].id },
+                 { body: 'Yes', correct: true, question: questions[5] },
+                 { body: 'No', question: questions[5] },
 
-                           { body: 'Any number of arguments', correct: true, question_id: questions[6].id },
-                           { body: 'Only one argument', question_id: questions[6].id },
-                           { body: 'No arguments', question_id: questions[6].id }
-                         ])
+                 { body: 'Any number of arguments', correct: true, question: questions[6] },
+                 { body: 'Only one argument', question: questions[6] },
+                 { body: 'No arguments', question: questions[6] }
+               ])
 
-PassTest.create!([
-                   { user_id: users[0].id, test_id: tests[0].id },
-                   { user_id: users[0].id, test_id: tests[2].id },
-                   { user_id: users[1].id, test_id: tests[4].id, passed: true },
-                   { user_id: users[2].id, test_id: tests[0].id },
-                   { user_id: users[2].id, test_id: tests[1].id },
-                   { user_id: users[2].id, test_id: tests[3].id, passed: true }
-                 ])
