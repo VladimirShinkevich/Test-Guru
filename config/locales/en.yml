@@ -48,6 +48,15 @@ en:
       message: "Enter the message"
     create:
       success: 'Message successfully send!'
+  badges:
+    index:
+      back: 'Back to tests'
+      title: 'Title'
+      badge: 'Badge'
+    achievements:
+      back: 'Back to tests'
+      title: 'Title'
+      badge: 'Badge'
   admin:
     nav:
       admin_panel: "TestGuru Admin Panel"
@@ -130,9 +139,10 @@ en:
       level: "Level"
       num_of_questions: "Number of questions"
       action: "Action"
+      badge_all: 'All badges'
+      my_badge: 'My badges'
     test:
       button_start: "Start"
-  
   test_passages:
     result:
       header: "Test Complete!!!"

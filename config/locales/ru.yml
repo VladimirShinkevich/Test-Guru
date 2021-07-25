@@ -14,6 +14,9 @@ ru:
         update: "Обновить ответ"
       user:
         create: "Зарегистрироваться"
+      badge:
+        create: "Создать награду"
+        update: "Обновить награду"
     label:
       test:
         title: "Название"
@@ -30,8 +33,22 @@ ru:
         email: "Email"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+      badge:
+        title: "Название"
+        image: "Награда"
+        rule: "Правило"
+        value: "Значение"
     select:
       prompt: "Выбрать"
+  badges:
+    index:
+      back: 'Назад к тестам'
+      title: 'Название'
+      badge: 'Награда'
+    achievements:
+      back: 'Назад к тестам'
+      title: 'Название'
+      badge: 'Награда'
   feed_back:
     index:
       contact: "Напишите нам"
@@ -41,6 +58,24 @@ ru:
     create:
       success: 'Сообщение отправлено!'
   admin:
+    badges:
+      index:
+        header: "Награды"
+        title: 'Название'
+        badge: 'Награда'
+        create_badge: 'Создать награду'
+      badge:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      show:
+        edit: "Редактировать"
+        back_to_tests: "Назад к тестам"
+      create:
+        success: "Награда успешно создана"
+      update: 
+        success: "Награда успешно обновлена"
     nav:
       admin_panel: "Панель администратора TestGuru"
       logout: "Выход"
@@ -53,6 +88,8 @@ ru:
         num_of_questions: "Количество вопросов"
         action: "Действие"
         create_test: "Создать новый тест"
+        gists: "Gists"
+        badge: "Награды"
       show:
         title: "Название теста:"
         level: "Уровень теста:"
@@ -124,6 +161,8 @@ ru:
       level: "Уровень"
       num_of_questions: "Количество вопросов"
       action: "Действие"
+      badge_all: 'Все награды'
+      my_badge: 'Мои награды'
     test:
       button_start: "Начать"
   test_passages:
@@ -170,6 +209,7 @@ ru:
       category: "Категория"
       user: "Пользователь"
       test_passage: "Прохождение теста"
+      badge: "Награда"
     attributes:
       test:
         title: "Название"
@@ -190,6 +230,11 @@ ru:
         title: "Название"
       question:
         body: "Вопрос"
+      badge: 
+        title: "Название"
+        image: "Награда"
+        rule: "Правило"
+        value: "Значение"
     errors:
       messages:
-        blank: "не может быть пустым!"  
+        blank: "не может быть пустым!" 

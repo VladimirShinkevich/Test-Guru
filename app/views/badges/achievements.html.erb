@@ -1,0 +1,18 @@
+<div class="card justify-content-center mt-3 border-primary">
+  <div class="card-body">
+    <h1 class="text-center"> Награды </h1>
+
+    <table class="table table-bordered table-hover table-success table-striped text-center" id="test_table">
+      <thead>
+        <tr>
+          <th> <%= t('.title') %> </th>
+          <th> <%= t('.badge') %> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @user_badges %>
+      </tbody>
+      <p> <%= link_to t('.back'), tests_path %> </p>
+    </table>
+  </div>
+</div>

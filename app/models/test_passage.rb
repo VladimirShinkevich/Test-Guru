@@ -9,7 +9,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_next_question
 
-  def success?
+  def test_success?
     pass_rate >= SUCCESS_RATE
   end
 
