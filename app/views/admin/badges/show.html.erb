@@ -2,6 +2,7 @@
   <div class="col col-md-4">
     <h3> <%= @badge.title %> </h3>
     <h3> <%= @badge.image %> </h3>
+    <h3> <%= @badge.rule.rule_type %> </h3>
     <%= link_to t('.edit'), edit_admin_badge_path(@badge) %> <br>
     <%= link_to t(".back_to_tests"), admin_tests_path %>
   </div>

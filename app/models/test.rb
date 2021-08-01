@@ -6,13 +6,13 @@ class Test < ApplicationRecord
 
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
-  has_many :passed_users, through: :test_passages, source: :user
+  has_many :users, through: :test_passages
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  scope :easy_level, -> { where(level: 0..1) }
+  scope :easy_level, -> { where(level: 1) }
   scope :normal_level, -> { where(level: 2..4) }
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
   scope :by_categories, lambda { |category_title|

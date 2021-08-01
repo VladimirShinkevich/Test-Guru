@@ -1,30 +1,33 @@
-class BadgeService 
+class BadgeService
+  attr_reader :user, :pass_test, :user_successfully_passed_tests
 
-  def self.define_badges(test_passage)
-    @user = test_passage.user
-    @test = test_passage.user
+  RULE = { first_test_passed: Badges::FirstTestPassed,
+           pass_test_by_level_easy: Badges::PassTestByLevelEasy,
+           pass_test_by_category: Badges::PassTestByCategory }.freeze
 
-    Badge.all.each do |badge|
-      if send("#{badge.rule}".to_sym, badge.value) && !BadgeUser.find_by(user_id: @user.id, badge_id: badge.id)
-        @user.badges << badge
-      end
+  def initialize(user, pass_test)
+    @user = user
+    @pass_test = pass_test
+    @user_successfully_passed_tests = []
+    
+    set_successfully_passed_test
+  end
+
+  def call
+    awards_received = Badge.select do |badge|
+      rule = RULE[badge.rule.rule_type.to_sym].new(@user, @pass_test, @user_successfully_passed_tests, badge )
+      rule.is_satisfies?
     end
+
+    user.badges.push(awards_received)
+    awards_received
   end
 
-  def self.first_atempt?(test_id)
-   @user.test_passages.where(test_id: test_id).count == 1
-  end
+  private
 
-  def self.category_finish?(category_id)
-    user_test_by_category = @user.passed_tests.where(category_id: category_id).distinct.size
-    caterory_tests = Category.find(category_id).tests.size
-    caterory_tests == user_test_by_category
-  end
-
-  def self.level_finish?(level)
-    user_test_by_level = @user.passed_tests.distinct(:test_id).where(level: level)
-    level_tests = Test.where(level: level).size
-    level_tests == user_test_by_level
+  def set_successfully_passed_test
+    user_successfully_passed_tests_ids = user.test_passages.where(correct_passed_test: true).pluck(:test_id)
+    user_successfully_passed_tests_ids.each { |id| @user_successfully_passed_tests << Test.find(id) }
   end
 
 end

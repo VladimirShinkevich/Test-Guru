@@ -32,7 +32,6 @@ Rails.application.routes.draw do
 
   resources :feed_back
 
-  resources :badges, only: %i[index]
-  get 'achievements', to: 'badges#achievements'
+  resources :badges, only: :index  
 
 end
