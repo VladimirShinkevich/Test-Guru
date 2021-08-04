@@ -189,7 +189,9 @@ ru:
       current_question_num: "Номер текущего вопроса: %{num}"
       next: "Далее" 
       question: "Вопрос: "
-      progress: "Прогресс: "  
+      progress: "Прогресс: "
+    update:
+      success: "Получена награда!!!" 
   shared:
     navbar:
       logout: "Выход"

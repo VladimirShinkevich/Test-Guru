@@ -189,7 +189,10 @@ en:
       current_question_num: "The number of the current question: %{num}"
       next: "Next"
       question: "Question" 
-      progress: "Progress: "  
+      progress: "Progress: "
+    update:
+      success: "Получена награда!!!" 
+ 
   shared:
     navbar:
       welcome: "Welcome"
