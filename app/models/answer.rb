@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   scope :right_answer, -> { where(correct: true) }
 
   def maximum_number_of_answers
-    errors.add(:base, 'количество не может быть больше 4!!!') if question.answers.count >= 4
+    errors.add(:base, :max_answers) if question.answers.count >= 4
   end
 end

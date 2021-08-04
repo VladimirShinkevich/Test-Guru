@@ -46,8 +46,11 @@ Answer.create!([
                  { body: 'To print text', question: questions[0] },
                  { body: 'To create links', correct: true, question: questions[0] },
 
-                 { body: 'A callback is a function passed as an argument to another function', correct: true, question: questions[1] },
-                 { body: 'Where callbacks really shine are in asynchronous functions, where one function has to wait for another function ', correct: true, questiond: questions[1] },
+                 { body: 'A callback is a function passed as an argument to another function', correct: true,
+                   question: questions[1] },
+                 {
+                   body: 'Where callbacks really shine are in asynchronous functions, where one function has to wait for another function ', correct: true, questiond: questions[1]
+                 },
                  { body: "Javascript doesn't support callback functions", question: questions[1] },
 
                  { body: '5', question: questions[2] },
@@ -70,4 +73,3 @@ Answer.create!([
                  { body: 'Only one argument', question: questions[6] },
                  { body: 'No arguments', question: questions[6] }
                ])
-

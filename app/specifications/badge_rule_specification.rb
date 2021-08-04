@@ -1,17 +1,8 @@
+# frozen_string_literal: true
+
 class BadgeRuleSpecification
-   attr_reader :user, :test_passage, :user_successfully_passed_tests, :current_badge
-
-  def initialize(user, test_passage, user_succsesfully_passed_tests, badge)
-    @user = user
+  def initialize(test_passage:, value:)
     @test_passage = test_passage
-    @user_successfully_passed_tests = user_succsesfully_passed_tests
-    @current_badge = badge
+    @value = value
   end
-
-  protected
-
-  def user_contains_current_badge?
-    @user.badges.ids.include?(current_badge.id)
-  end
-
 end

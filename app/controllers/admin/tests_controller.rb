@@ -20,7 +20,7 @@ class Admin::TestsController < Admin::BaseController
       redirect_to [:admin, @test], notice: t('.success')
     else
       render :new
-    end   
+    end
   end
 
   def edit; end
@@ -28,17 +28,17 @@ class Admin::TestsController < Admin::BaseController
   def update
     if @test.update(test_params)
       redirect_to [:admin, @test], notice: t('.success')
-    else 
+    else
       render :edit
-    end   
+    end
   end
 
   def update_inline
     if @test.update(test_params)
-      redirect_to admin_tests_path, notice: t('.success') 
-    else 
+      redirect_to admin_tests_path, notice: t('.success')
+    else
       render :index
-    end   
+    end
   end
 
   def destroy
@@ -49,9 +49,9 @@ class Admin::TestsController < Admin::BaseController
   private
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)   
+    params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
- 
+
   def set_test
     @test = Test.find(params[:id])
   end

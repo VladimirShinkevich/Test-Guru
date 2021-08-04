@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 module Badges
   class FirstTestPassed < BadgeRuleSpecification
-    def is_satisfies?
-      (test_passage.correct_passed_test?) && (user.test_passages.map(&:test).count(test_passage.test) == 1) && (!user_contains_current_badge?)
+    def is_satiesfies?
+      first_try = TestPassage.where(test: @test_passage.test, user: @test_passage.user)
+      first_try.count == 1 && first_try.first.test_success?
     end
   end
 end

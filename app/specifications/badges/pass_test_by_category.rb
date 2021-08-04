@@ -1,16 +1,19 @@
+# frozen_string_literal: true
+
 module Badges
   class PassTestByCategory < BadgeRuleSpecification
-    CATEGORY = "Backend".freeze
-
-    def initialize(*args)
-      super
-      @select_by_category = Test.by_categories(CATEGORY)
-      @user_successfully_passed_tests_by_category = Test.joins(:category).where( { id: user_successfully_passed_tests.pluck(:id) } ).where(categories: { title: CATEGORY })
+    def is_satiesfies?
+      @category = Category.where(title: @value).first
+      return false unless  @test_passage.test.category == @category
+      Test.where(category: @category).size == passed_test_by_category.size
     end
 
-    def is_satisfies?
-      (@select_by_category == @user_successfully_passed_tests_by_category)&&(test_passages.test.category.title == CATEGORY)&&(!user_contains_current_badge?)
+    def passed_test_by_category
+      Test
+        .where(category: @category)
+        .joins(:test_passages)
+        .where(test_passages: { user: @test_passage.user, correct_passed_test: true })
+        .distinct
     end
-
   end
 end

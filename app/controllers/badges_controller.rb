@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class BadgesController < ApplicationController
-   
   def index
-    @badges = current_user.badges
+    @badges = Badge.all
+    @user_badges = current_user.badges.all
   end
 end

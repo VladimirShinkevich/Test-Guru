@@ -14,6 +14,9 @@ en:
         update: "Update Answer"
       user:
         create: "Registration"
+      badge:
+        create: "Create badge"
+        update: "Update badge"
     label:
       test:
         title: "Title"
@@ -30,16 +33,20 @@ en:
         email: "Email"
         password: "Password"
         password_confirmation: "Password confirmation"
+      badge:
+        title: "Title"
+        image: "Badge"
+        rule_type: "Rule"
+        value: "Value"
     select:
       prompt: "Select"
-  devise:
-    registrations:
-      new:
-        header: "Registration"
-    sessions:
-      new:
-        header: "Enter"
-        remember: "Remember"
+  badges:
+    index:
+      back: 'Back to tests'
+      title: 'Title'
+      badge: 'Badge'
+      header_all: "All badges"
+      header_my: "My badges"
   feed_back:
     index:
       contact: "Contact us"
@@ -48,20 +55,42 @@ en:
       message: "Enter the message"
     create:
       success: 'Message successfully send!'
-  badges:
-    index:
-      back: 'Back to tests'
-      title: 'Title'
-      badge: 'Badge'
-    achievements:
-      back: 'Back to tests'
-      title: 'Title'
-      badge: 'Badge'
   admin:
+    badges:
+      index:
+        header: "Badges"
+        title: 'Title'
+        badge: 'Badge'
+        create_badge: 'Create badge'
+        action: "Action"
+        back_to_tests: "Back to tests"
+      form:
+        back_to_badges: "Back to badges"
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      show:
+        edit: "Edit"
+        back: "Back to badges"
+      create:
+        success: "Badge successfully created"
+      update: 
+        success: "Badge successfully updated"
     nav:
       admin_panel: "TestGuru Admin Panel"
       logout: "Logout"
       welcome: "Welcome"
+    gists:
+      index:
+        user: "User"
+        question: "Question"
+        url: "Url"
+        action: "Action"
+        back: "Back to tests"
+      gist:
+        delete_btn: "Delete"
     tests:
       index:
         header: "Tests"
@@ -70,6 +99,8 @@ en:
         num_of_questions: "Number of questions"
         action: "Action"
         create_test: "Create new test"
+        gists: "Gists"
+        badge: "Badge"
       show:
         title: "Test title:"
         level: "Test level:"
@@ -89,6 +120,8 @@ en:
         success: "Test successfully update!!!"
       form_inline:
         submit: "Ok"
+      update_inline:
+        success: "Test successfully updated!!!"
       destroy:
         success: "Test successfully delete!!!"
       test:
@@ -185,6 +218,7 @@ en:
       category: "Category"
       user: "User"
       test_passage: "Test passage"
+      badge: "Награда"
     attributes:
       test:
         title: "Title"
@@ -205,6 +239,12 @@ en:
         title: "Title"
       question:
         body: "Body"
+      badge: 
+        title: "Title"
+        image: "Badge"
+        rule_type: "Rule"
+        value: "Value"
     errors:
       messages:
         blank: "can't be blank"   
+        max_answers: "Cont of answer can't be graten than 4!!!"

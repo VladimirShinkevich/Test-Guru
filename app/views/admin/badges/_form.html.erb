@@ -14,11 +14,19 @@
         </p>
         <br>
         <p>
-          <%= form.label :rule_id %> <br>
-          <%= form.collection_select :rule_id, BadgesRule.all, :id, :name, prompt: true %>
+          <%= form.label :rule_type %>
+          <%= form.collection_select :rule_type, BadgeService::RULE, :first, :first, prompt: true %>
         </p>
+        <br>
+        <p>
+          <%= form.label :value %>
+          <%= form.text_field :value %>
+        </p>
+        <br>
+
         <%= form.submit %>
       </div>
     <% end %>
   </div>
+      <p> <%= link_to t('.back_to_badges'), admin_badges_path, class: 'btn btn-primary' %> </p>
 </div>

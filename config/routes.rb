@@ -3,7 +3,8 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  devise_for :users, path: :gurus, path_names: { sing_in: :login, sing_out: :logout }, controllers: { sessions: "users/sessions" }
+  devise_for :users, path: :gurus, path_names: { sing_in: :login, sing_out: :logout },
+                     controllers: { sessions: 'users/sessions' }
 
   resources :tests, only: :index do
     member do
@@ -32,6 +33,5 @@ Rails.application.routes.draw do
 
   resources :feed_back
 
-  resources :badges, only: :index  
-
+  resources :badges, only: :index
 end

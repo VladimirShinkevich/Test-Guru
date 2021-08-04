@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::BadgesController < Admin::BaseController
   before_action :find_badges, only: %i[show edit update destroy]
 
@@ -13,11 +15,11 @@ class Admin::BadgesController < Admin::BaseController
 
   def create
     @badge = Badge.new(badge_params)
-      if @badge.save
-        redirect_to [:admin, @badge], notice: t('.success')
-      else
-        render :new
-      end
+    if @badge.save
+      redirect_to [:admin, @badge], notice: t('.success')
+    else
+      render :new
+    end
   end
 
   def edit; end
@@ -42,6 +44,6 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:title, :image, :rule_id)
+    params.require(:badge).permit(:title, :image, :rule_type, :value)
   end
 end
