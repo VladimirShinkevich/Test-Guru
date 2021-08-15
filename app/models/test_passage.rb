@@ -18,7 +18,19 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_up?
+  end
+
+  def time_up?
+    timer_exists? ? false : time_to_pass_test <= Time.now
+  end
+
+  def time_to_pass_test
+    (created_at + test.timer.minutes).httpdate
+  end
+
+  def timer_exists?
+    test.timer.nil?
   end
 
   def number_of_question
@@ -26,6 +38,7 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
+    return if time_up?
     self.correct_questions += 1 if correct_answers?(answer_ids)
     succsesfuly_passed_test if test_success?
     save!

@@ -22,6 +22,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        timer: "Time for test (min)"
       question:
         title: "Title"
       answer:
@@ -101,6 +102,7 @@ en:
         create_test: "Create new test"
         gists: "Gists"
         badge: "Badge"
+        timer: "Time for test (min)"
       show:
         title: "Test title:"
         level: "Test level:"
@@ -108,6 +110,7 @@ en:
         create_question: "Create new question"
         edit: "Edit question"
         back_to_tests: "Back to tests"
+        timer: "Time for test (min)"
       new:
         create_test: "Create New Test" 
         back_to_tests: "Back to tests"
@@ -174,6 +177,7 @@ en:
       action: "Action"
       badge_all: 'All badges'
       my_badge: 'My badges'
+      timer: "Time for test (min)"
     test:
       button_start: "Start"
   test_passages:
@@ -190,9 +194,9 @@ en:
       next: "Next"
       question: "Question" 
       progress: "Progress: "
+      timer: "Dead line: "
     update:
-      success: "Получена награда!!!" 
- 
+      success: "You get badge!!!" 
   shared:
     navbar:
       welcome: "Welcome"
