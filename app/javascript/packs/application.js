@@ -6,6 +6,7 @@ require("sorting_table")
 require("password_confirmation")
 require("form_inline")
 require("progress_bar")
+require("time_bar")
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"

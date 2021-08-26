@@ -1,0 +1,9 @@
+<div class="card justify-content-center mt-3 border-primary">
+  <div class="col col-md-4">
+    <h3> <%= @badge.title %> </h3>
+    <h3> <%= @badge.image %> </h3>
+    <h3> <%= @badge.rule_type %> </h3>
+    <%= link_to t('.edit'), edit_admin_badge_path(@badge), class: "btn btn-primary" %> <br><br>
+    <%= link_to t(".back"), admin_badges_path, class: "btn btn-primary" %>
+  </div>
+</div>

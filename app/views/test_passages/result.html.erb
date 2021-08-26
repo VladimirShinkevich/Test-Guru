@@ -2,7 +2,7 @@
   <div class="col col-md-4">
     <h1> <%= t('.header') %></h1>
     <p> 
-      <% if @test_passage.success? %> 
+      <% if @test_passage.test_success? %> 
         <h3> <b> <%= t('.success_header', title: @test_passage.test.title) %> </b> </h3>
         <h3 class="alert alert-success" role="alert"> <b> <%= t('.result') %> <%= @test_passage.pass_rate %> % </b> </h3>
       <% else %>

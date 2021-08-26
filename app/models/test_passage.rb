@@ -9,7 +9,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_next_question
 
-  def success?
+  def test_success?
     pass_rate >= SUCCESS_RATE
   end
 
@@ -18,7 +18,19 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_up?
+  end
+
+  def time_up?
+    timer_exists? ? false : time_to_pass_test <= Time.now
+  end
+
+  def time_to_pass_test
+    (created_at + test.timer.minutes).httpdate
+  end
+
+  def timer_exists?
+    test.timer.nil?
   end
 
   def number_of_question
@@ -26,14 +38,21 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
+    return if time_up?
     self.correct_questions += 1 if correct_answers?(answer_ids)
+    succsesfuly_passed_test if test_success?
     save!
+  end
+
+  def succsesfuly_passed_test
+    self.correct_passed_test = true
   end
 
   private
 
   def correct_answers?(answer_ids)
     return false if answer_ids.nil?
+
     correct_answer.ids.sort == answer_ids.map(&:to_i).sort
   end
 
@@ -43,11 +62,11 @@ class TestPassage < ApplicationRecord
 
   def next_question
     self.current_question =
-    if current_question.nil?
-      test.questions.first
-    else
-      test.questions.order(:id).where('id > ?', current_question.id).first
-    end
+      if current_question.nil?
+        test.questions.first
+      else
+        test.questions.order(:id).where('id > ?', current_question.id).first
+      end
   end
 
   def before_validation_set_next_question

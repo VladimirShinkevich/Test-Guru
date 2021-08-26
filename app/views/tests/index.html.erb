@@ -11,12 +11,14 @@
             <%= octicon 'arrow-down', class: 'text-success hide' %>
           <th> <%= t('.level') %> </th>
           <th> <%= t(".num_of_questions") %> </th>
+          <th> <%= t('.timer') %> </th>
           <th> <%= t('.action') %> </th>
         </tr>
       </thead>
       <tbody>
         <%= render @tests %>
       </tbody>
+      <p> <%= link_to t('.badge_all'), badges_path, class: 'btn btn-primary' %> </p>
     </table>
   </div>
 </div>

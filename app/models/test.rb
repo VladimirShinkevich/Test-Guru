@@ -12,7 +12,7 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  scope :easy_level, -> { where(level: 0..1) }
+  scope :easy_level, -> { where(level: 1) }
   scope :normal_level, -> { where(level: 2..4) }
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
   scope :by_categories, lambda { |category_title|

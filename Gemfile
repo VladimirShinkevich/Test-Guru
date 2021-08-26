@@ -31,8 +31,8 @@ gem 'rubocop', '~> 1.15', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'octokit', '~> 4.0'
 gem 'octicons_helper'
+gem 'octokit', '~> 4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
